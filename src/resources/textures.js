@@ -9,7 +9,7 @@ billboardTextures.fundTexture = "../src/jsm/fund.png";
 let boxTexture = {};
 // 链接的图标地址
 boxTexture.Github = "../src/jsm/githubLogo.png";
-boxTexture.BiliBili = "../src/jsm/BiliBili.png";
+boxTexture.BiliBili = "../src/jsm/biliBili.png";
 boxTexture.QQ = "../src/jsm/qq.png";
 boxTexture.mail = "../src/jsm/envelope.png";
 boxTexture.reactIcon = "../src/jsm/react.png";
