@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>煎饼在线播放器</title>
+    <style>
+      body {
+        background-color: #ccc;
+      }
+      .warning {
+        color: red;
+        font-size: 20px;
+        font-weight: 400;
+        text-align: center;
+      }
+      .box {
+        position: relative;
+        width: auto;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #url {
+        position: relative;
+        margin: 0 15px;
+        width: 200px;
+      }
+
+      .play {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        box-shadow: gray;
+        color: purple;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 2px 2px 2px #888888;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="warning">此软件仅用于交流学习,请勿用于任何商业用途!</div>
+    <div class="box">
+      <span class="splj">视频链接:</span><input type="url" id="url" />
+      <div class="play" onclick="play()">播放</div>
+    </div>
+
+    <script>
+      let vipParseUrl = "http://www.wmxz.wang/video.php?url=";
+
+      function checkURL(URL) {
+        var str = URL;
+        var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+        var objExp = new RegExp(Expression);
+        if (objExp.test(str) == true) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      function play() {
+        let url = document.getElementById("url").value;
+        if (checkURL(url)) {
+          window.location.href = vipParseUrl + url;
+        } else {
+          document.getElementById("url").value = "";
+          alert("输入链接错误,请重新输入!");
+        }
+      }
+    </script>
+  </body>
+</html>
